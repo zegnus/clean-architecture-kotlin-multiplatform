@@ -5,6 +5,7 @@ include(
     ":content:framework",
     ":content:presentation-android",
     ":content:presentation-ios",
+    ":support:coroutines",
     ":navigation",
     ":app"
 )
