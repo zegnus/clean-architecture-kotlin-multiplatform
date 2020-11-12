@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-CleanArchitecture/Pods-CleanArchitecture-frameworks.sh
+${PODS_ROOT}/../../content-domain-shared/build/cocoapods/framework/content_domain_shared.framework
+${PODS_ROOT}/../../content-domain-shared/build/cocoapods/framework/content_domain_shared.framework.dSYM

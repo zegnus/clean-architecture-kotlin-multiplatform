@@ -1,0 +1,2 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/content_domain_shared.framework
+${DWARF_DSYM_FOLDER_PATH}/content_domain_shared.framework.dSYM
