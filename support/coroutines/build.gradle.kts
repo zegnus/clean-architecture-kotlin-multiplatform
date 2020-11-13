@@ -25,27 +25,19 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9-native-mt") {
-                    version {
-                        strictly("1.3.9-native-mt")
-                    }
-                }
+                implementation(Dependencies.Coroutines.common)
             }
         }
-        val androidMain by getting {
-            dependencies {
-                implementation("androidx.core:core-ktx:1.3.2")
-            }
-        }
+        val androidMain by getting
         val iosMain by getting
     }
 }
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Versions.androidCompileSdk)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(Versions.androidMinSdk)
+        targetSdkVersion(Versions.androidTargetSdk)
         versionCode = 1
         versionName = "1.0"
     }

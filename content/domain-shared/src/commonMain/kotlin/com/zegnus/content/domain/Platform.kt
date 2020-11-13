@@ -1,4 +1,4 @@
-package com.zegnus.content.presentationios
+package com.zegnus.content.domain
 
 expect class Platform() {
     val platform: String

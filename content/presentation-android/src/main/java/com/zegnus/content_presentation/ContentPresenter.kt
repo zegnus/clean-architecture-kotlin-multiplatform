@@ -1,13 +1,11 @@
 package com.zegnus.content_presentation
 
 import androidx.lifecycle.ViewModel
-import com.zegnus.content.Platform
 import com.zegnus.content.usecase.ContentUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import java.util.*
 
 @ExperimentalCoroutinesApi
 class ContentPresenter(
@@ -20,7 +18,7 @@ class ContentPresenter(
         contentUseCase.start()
 
         contentUseCase.useCaseFlow.onEach { modelState ->
-            contentDisplayer.display(modelState.toViewState())
+            contentDisplayer.display(ViewState(modelState.message))
         }.launchIn(coroutineScope)
     }
 
@@ -32,11 +30,3 @@ class ContentPresenter(
 
     data class ViewState(val text: String)
 }
-
-@ExperimentalCoroutinesApi
-private fun ContentUseCase.ModelState.toViewState() =
-    when (this) {
-        is ContentUseCase.ModelState.Loading -> ContentPresenter.ViewState(message + " from ${Platform().platform}")
-        is ContentUseCase.ModelState.Loaded -> ContentPresenter.ViewState(texts[Random().nextInt(4)])
-        is ContentUseCase.ModelState.Error -> ContentPresenter.ViewState(message)
-    }

@@ -41,7 +41,7 @@ class ContentUseCase(
     }
 
     private suspend fun refresh() {
-        _useCaseFlow.emit(ModelState.Loading)
+        _useCaseFlow.emit(ModelState.Loading(contentDomain.platform()))
 
         val map = contentDomain.loadTexts().map {
             it.text.toLowerCase()
@@ -58,7 +58,7 @@ class ContentUseCase(
     }
 
     sealed class ModelState(val message: String) {
-        object Loading : ModelState("Loading");
+        data class Loading(val platform: String) : ModelState("Loading from $platform");
         data class Loaded(val texts: List<String>) : ModelState("Loading");
         object Error : ModelState("Error");
     }

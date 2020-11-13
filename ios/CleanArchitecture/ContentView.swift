@@ -6,16 +6,12 @@
 //
 
 import SwiftUI
-
+import LinkPresentation
 
 struct ContentView: View {
     var body: some View {
         Button(action: {
             print("hello world 3")
-            let contentPresenter: ContentPresenter = ContentPresenter()
-            contentPresenter.start { text in
-                print(text)
-            }
             
         }) {
             Text("Hello world 3")

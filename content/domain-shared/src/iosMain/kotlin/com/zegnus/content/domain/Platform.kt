@@ -1,4 +1,4 @@
-package com.zegnus.content
+package com.zegnus.content.domain
 
 import platform.UIKit.UIDevice
 

@@ -6,6 +6,8 @@ class ContentDomain(private val contentRepository: ContentRepository) {
         val texts = contentRepository.loadTexts()
         return texts.reversed()
     }
+
+    fun platform(): String = Platform().platform
 }
 
 data class Text(val text: String)

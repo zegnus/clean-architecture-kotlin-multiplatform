@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Versions.androidCompileSdk)
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(Versions.androidMinSdk)
+        targetSdkVersion(Versions.androidTargetSdk)
         versionCode = 1
         versionName = "1.0"
     }
@@ -34,8 +34,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(project(":content:domain-shared"))
-                implementation(kotlin("stdlib-common", "1.4.10"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+                implementation(Dependencies.Coroutines.common)
             }
         }
     }

@@ -1,27 +1,24 @@
 package com.zegnus.content.presentationios
 
-import com.zegnus.content.data.ContentData
-import com.zegnus.content.domain.ContentDomain
 import com.zegnus.content.usecase.ContentUseCase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.zegnus.support.coroutines.DispatcherProvider
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 
+@ExperimentalCoroutinesApi
 class ContentPresenter {
-    private val scope: CoroutineScope = CustomMainScope()
-    private val contentUseCase: ContentUseCase = ContentUseCase(ContentDomain(ContentData()), scope)
+    private val scope: CoroutineScope = MainScope()
+    private val dispatcherProvider = DispatcherProvider()
 
     private val _sharedFlow = MutableSharedFlow<String>()
 
     fun start(callback: (String) -> Unit) {
-        runBlocking {
+        scope.launch {
             callback("call from blocking")
-            withContext(Dispatchers.Default) {
+            withContext(dispatcherProvider.default) {
                 callback("call from with context")
             }
 
@@ -31,7 +28,7 @@ class ContentPresenter {
         }
     }
 
-    fun action(action: ContentUseCase.Action) = runBlocking {
+    fun action(action: ContentUseCase.Action) = scope.launch {
         _sharedFlow.emit("value from flow")
     }
 }
