@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.6.3")
+        classpath("com.android.tools.build:gradle:4.1.2")
         classpath("co.touchlab:kotlinnativecocoapods:0.11")
 
         classpath(kotlin("gradle-plugin", "1.4.10"))
