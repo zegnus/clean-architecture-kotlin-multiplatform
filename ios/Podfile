@@ -1,12 +1,12 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '13.5'
 
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'CleanArchitecture' do
-    pod 'data_shared', :path => '/Users/zegnus/Development/CleanArchitecture/content/data-shared'
-    pod 'domain_shared', :path => '/Users/zegnus/Development/CleanArchitecture/content/domain-shared'
-    pod 'usecase_shared', :path => '/Users/zegnus/Development/CleanArchitecture/content/usecase-shared'
-    pod 'presentation_ios', :path => '/Users/zegnus/Development/CleanArchitecture/content/presentation-ios'
+    pod 'data_shared', :path => '../content/data-shared'
+    pod 'domain_shared', :path => '../content/domain-shared'
+    pod 'usecase_shared', :path => '../content/usecase-shared'
+    pod 'presentation_ios', :path => '../content/presentation-ios'
 end

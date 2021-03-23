@@ -5,27 +5,27 @@ PODS:
   - usecase_shared (0.1)
 
 DEPENDENCIES:
-  - data_shared (from `/Users/zegnus/Development/CleanArchitecture/content/data-shared`)
-  - domain_shared (from `/Users/zegnus/Development/CleanArchitecture/content/domain-shared`)
-  - presentation_ios (from `/Users/zegnus/Development/CleanArchitecture/content/presentation-ios`)
-  - usecase_shared (from `/Users/zegnus/Development/CleanArchitecture/content/usecase-shared`)
+  - data_shared (from `../content/data-shared`)
+  - domain_shared (from `../content/domain-shared`)
+  - presentation_ios (from `../content/presentation-ios`)
+  - usecase_shared (from `../content/usecase-shared`)
 
 EXTERNAL SOURCES:
   data_shared:
-    :path: "/Users/zegnus/Development/CleanArchitecture/content/data-shared"
+    :path: "../content/data-shared"
   domain_shared:
-    :path: "/Users/zegnus/Development/CleanArchitecture/content/domain-shared"
+    :path: "../content/domain-shared"
   presentation_ios:
-    :path: "/Users/zegnus/Development/CleanArchitecture/content/presentation-ios"
+    :path: "../content/presentation-ios"
   usecase_shared:
-    :path: "/Users/zegnus/Development/CleanArchitecture/content/usecase-shared"
+    :path: "../content/usecase-shared"
 
 SPEC CHECKSUMS:
-  data_shared: 5d64359980e25df10fd85318000de830f08dac76
-  domain_shared: 1549089998dc0ac05b1de6fbf4c247364f90ece6
-  presentation_ios: 68592521d3aab0853071e3f6a4e1466d199f1989
-  usecase_shared: 12b5c93a4d3c34d4e3a449ace9fe79af4c3eeea4
+  data_shared: b14825cb4c80696fac3395f9fe4b1eaaa607a43a
+  domain_shared: d1fbd89ef6993c268a1f61cc578c971015bb3f4f
+  presentation_ios: bfa2534b5948c02bd0b0046cb0b613e12edeed5c
+  usecase_shared: 5b0357fb8f9b1648c8c846f115f14adf8dbbc024
 
-PODFILE CHECKSUM: 7299aa08041ea1c05964df00776e6347d8ba68ca
+PODFILE CHECKSUM: fdbe2f8e19782ef82fc0e7a24bfd4b4dd3e557f4
 
-COCOAPODS: 1.9.2
+COCOAPODS: 1.10.1

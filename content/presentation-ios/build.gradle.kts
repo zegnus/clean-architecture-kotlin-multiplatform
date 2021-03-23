@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    id("co.touchlab.native.cocoapods")
+    kotlin("native.cocoapods")
     id("com.android.library")
 }
 
@@ -50,12 +50,18 @@ kotlin {
         }
     }
 
-    cocoapodsext {
+    version = "0.1"
+
+    cocoapods {
+        // Configure fields required by CocoaPods.
         summary = "Presentation iOS shared library"
         homepage = "https://github.com/touchlab/KaMPKit"
-        framework {
-            isStatic = false
-            transitiveExport = true
-        }
+
+        // You can change the name of the produced framework.
+        // By default, it is the name of the Gradle project.
+        frameworkName = "cleanarchitecture-content-presentation"
+
+        ios.deploymentTarget = "13.5"
+        podfile = project.file("../../ios/Podfile")
     }
 }
